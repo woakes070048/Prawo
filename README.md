@@ -1,5 +1,7 @@
-# Prawo
+# PRAWO
 ## Law Firm Management System
+
+Free and open source management system for law firms.
 
 Features:
 
@@ -14,6 +16,8 @@ Features:
 * Cloud File Storage and Document Management
 
 * Unlimited Users, Clients, and Cases
+
+* Advanced Reporting
 
 ## © 2018 Aamir Sayid
 ### aamir.sayid@gmail.com
