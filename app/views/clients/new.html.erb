@@ -1,7 +1,70 @@
 <% provide(:title, 'New Client') %>
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <h1 class="text-center">New Client</h1>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">New Client</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_with scope: :client, local: true do |form| %>
+          <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: 'form-control' %>
+          </div>
 
+          <div class="form-group">
+            <%= form.label :phone %>
+            <%= form.text_field :phone, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :email %>
+            <%= form.text_field :email, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :address %>
+            <%= form.text_area :address, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :city %>
+            <%= form.text_field :city, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :state %>
+            <%= form.text_field :state, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :country %>
+            <%= form.text_field :country, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :notes %>
+            <%= form.text_area :notes, class: 'form-control' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Instructions</h3>
+      </div>
+      <div class="panel-body">
+        <div class="alert alert-success" role="alert"><strong>Name:</strong> Please fill complete name of the client.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>Phone:</strong> Please fill the phone number of the client along with country code.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>Email:</strong> Please fill email address of the client.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>Address:</strong> Please fill address of the client.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>City:</strong> Please fill city name. No initials.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>State:</strong> Please fill state name. No initials.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>Country:</strong> Please provide country name from the drop down.<br/></div>
+        <div class="alert alert-success" role="alert"><strong>Notes:</strong> Put additional notes about the client here.</div>
+      </div>
+    </div>
   </div>
 </div>
