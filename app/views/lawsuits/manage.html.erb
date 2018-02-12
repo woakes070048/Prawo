@@ -1,0 +1,46 @@
+<% provide(:title, "Manage Lawsuits: #{@client.name}") %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      Manage Lawsuits:
+      <strong><%= @client.name %></strong>
+      <%= link_to 'Create New Lawsuit', new_lawsuit_path(@client), class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Back', client_path(@client), class: 'btn btn-lg btn-info' %>
+    </h1>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"></h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+          <tr>
+            <th>Case Number</th>
+            <th>Case Type</th>
+            <th>Opposite Party</th>
+            <th>Court</th>
+            <th>Location</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @lawsuits.each do |lawsuit| %>
+            <tr>
+              <td><%= link_to lawsuit.case_number, lawsuit_details_path(lawsuit) %></td>
+              <td><%= lawsuit.case_type %></td>
+              <td><%= lawsuit.opposite_party %></td>
+              <td><%= lawsuit.court_name %></td>
+              <td><%= lawsuit.location %></td>
+              <td>
+                <%= link_to 'Details', lawsuit_details_path(lawsuit), class: 'btn btn-sm btn-primary' %>
+                <%= link_to 'Edit', edit_lawsuit_path(lawsuit), class: 'btn btn-sm btn-success' %>
+                <%= link_to 'Delete', remove_lawsuit_path(lawsuit), class: 'btn btn-sm btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

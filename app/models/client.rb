@@ -16,4 +16,5 @@ class Client < ApplicationRecord
   end
 
   has_many :fees, dependent: :destroy
+  has_many :lawsuits, dependent: :destroy
 end

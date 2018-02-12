@@ -1,0 +1,80 @@
+<% provide(:title, "Lawsuit Details: #{@lawsuit.client.name} vs #{@lawsuit.opposite_party}") %>
+<div class="row">
+  <div class="col-md-8">
+    <h1>
+      <%= "#{@lawsuit.client.name} vs #{@lawsuit.opposite_party}" %>
+    </h1>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"></h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>Case Number</th>
+            <td><%= @lawsuit.case_number %></td>
+          </tr>
+
+          <tr>
+            <th>Case Type</th>
+            <td><%= @lawsuit.case_type %></td>
+          </tr>
+
+          <tr>
+            <th>Opposite Party</th>
+            <td><%= @lawsuit.opposite_party %></td>
+          </tr>
+
+          <tr>
+            <th>Court Name</th>
+            <td><%= @lawsuit.court_name %></td>
+          </tr>
+
+          <tr>
+            <th>Location</th>
+            <td><%= @lawsuit.location %></td>
+          </tr>
+
+          <tr>
+            <th>Filing Date</th>
+            <td><%= time_tag @lawsuit.filing_date %></td>
+          </tr>
+
+          <tr>
+            <th>Details</th>
+            <td><%= @lawsuit.case_details %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Actions</h3>
+      </div>
+      <div class="panel-body">
+        <%= link_to 'Edit', edit_lawsuit_path(@lawsuit), class: 'btn btn-lg btn-info' %>
+        <%= link_to 'Delete', remove_lawsuit_path(@lawsuit), data: { confirm: 'Do you want to delete this lawsuit and all its associated data?' }, class: 'btn btn-lg btn-danger' %>
+
+        <hr />
+
+        <%= link_to 'Client Details', client_path(@lawsuit.client), class: 'btn btn-lg btn-success' %>
+        <%= link_to 'Manage Lawsuits', manage_lawsuits_path(@lawsuit.client), class: 'btn btn-lg btn-primary' %>
+
+        <hr />
+
+        <%= link_to 'New Fees', new_fees_path(@lawsuit.client), class: 'btn btn-lg btn-success' %>
+        <%= link_to 'Manage Fees', manage_fees_path(@lawsuit.client), class: 'btn btn-lg btn-primary' %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Information</h3>
+      </div>
+      <div class="panel-body">
+        Information
+      </div>
+    </div>
+  </div>
+</div>

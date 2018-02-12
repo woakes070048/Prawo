@@ -24,10 +24,11 @@
                 <td><%= link_to client.name, client_path(client) %></td>
                 <td><%= client.phone %></td>
                 <td><%= client.city %></td>
-                <td>Coming Soon...</td>
+                <td><%= client.lawsuits.count %></td>
                 <td>
-                  <%= link_to 'View', client_path(client), class: 'btn btn-sm btn-success' %>
+                  <%= link_to 'Details', client_path(client), class: 'btn btn-sm btn-success' %>
                   <%= link_to 'Fees', manage_fees_path(client), class: 'btn btn-sm btn-primary' %>
+                  <%= link_to 'Lawsuits', manage_lawsuits_path(client), class: 'btn btn-sm btn-info' %>
                 </td>
               </tr>
             <% end %>

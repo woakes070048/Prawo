@@ -27,3 +27,15 @@ fee.save
 
 fee = Fee.new(details: 'Sample Fees 6', amount: 447.34, client_id: 1)
 fee.save
+
+legal_case = Lawsuit.new(case_number: "WPA 232", case_type: "Writ Petition", court_name: "Circuit Court of Appeals, California", location: "Los Angeles", filing_date: '2/2/2015', client_id: 1, opposite_party: 'Umbrella Corporation', case_details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+legal_case.save
+
+legal_case = Lawsuit.new(case_number: "MTG 243", case_type: "Specific Relief", court_name: "Circuit Court of Appeals, California", location: "Los Angeles", filing_date: '8/5/2015', client_id: 1, opposite_party: 'Solar Inc.', case_details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+legal_case.save
+
+legal_case = Lawsuit.new(case_number: "CAL 852", case_type: "Class Action Litigation", court_name: "Circuit Court of Appeals, California", location: "Los Angeles", filing_date: '15/10/2015', client_id: 1, opposite_party: 'Martian Inc.', case_details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+legal_case.save
+
+legal_case = Lawsuit.new(case_number: "CRT 232", case_type: "Criminal Trial", court_name: "Circuit Court of Appeals, California", location: "Los Angeles", filing_date: '28/12/2015', client_id: 1, opposite_party: 'Jovian Corporation', case_details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+legal_case.save
