@@ -1,9 +1,14 @@
 <% provide(:title, "Manage Fees: #{@client.name}") %>
 <div class="row">
   <div class="col-md-9">
+    <h1>
+      Manage Fees:
+      <strong><%= @client.name %></strong>
+      <%= link_to 'Back', client_path(@client), class: 'btn btn-lg btn-primary' %>
+    </h1>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Manage Fees: <%= @client.name %></h3>
+        <h3 class="panel-title"></h3>
       </div>
       <div class="panel-body">
         <table class="table table-hover table-striped">

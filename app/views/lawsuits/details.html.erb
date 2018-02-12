@@ -3,6 +3,7 @@
   <div class="col-md-8">
     <h1>
       <%= "#{@lawsuit.client.name} vs #{@lawsuit.opposite_party}" %>
+      <%= link_to 'Back', manage_lawsuits_path(@lawsuit.client), class: 'btn btn-primary btn-lg' %>
     </h1>
     <div class="panel panel-default">
       <div class="panel-heading">
