@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Custom Gems
 gem 'country_select'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

@@ -8,3 +8,22 @@
 
 client = Client.new(name: 'ABC Industries', father_name: 'John Doe', phone: '00123456789', email: 'abc@example.com', date_of_birth: '7/8/1992', address: 'Mulholland Drive, Hollywood', city: 'Los Angeles', pin_zip: '95248', state: 'California', country: "US", notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 client.save
+
+
+fee = Fee.new(details: 'Sample Fees 1', amount: 456.34, client_id: 1)
+fee.save
+
+fee = Fee.new(details: 'Sample Fees 2', amount: 587.34, client_id: 1)
+fee.save
+
+fee = Fee.new(details: 'Sample Fees 3', amount: 852.34, client_id: 1)
+fee.save
+
+fee = Fee.new(details: 'Sample Fees 4', amount: 474.34, client_id: 1)
+fee.save
+
+fee = Fee.new(details: 'Sample Fees 5', amount: 498.34, client_id: 1)
+fee.save
+
+fee = Fee.new(details: 'Sample Fees 6', amount: 447.34, client_id: 1)
+fee.save

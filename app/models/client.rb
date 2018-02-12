@@ -14,4 +14,6 @@ class Client < ApplicationRecord
   def country_name
     ISO3166::Country[country].name
   end
+
+  has_many :fees
 end
