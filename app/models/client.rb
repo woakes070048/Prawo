@@ -15,5 +15,5 @@ class Client < ApplicationRecord
     ISO3166::Country[country].name
   end
 
-  has_many :fees
+  has_many :fees, dependent: :destroy
 end
