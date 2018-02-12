@@ -1,0 +1,79 @@
+<% provide(:title, "Edit Lawsuit") %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Edit <%= "#{@client.name} vs #{@lawsuit.opposite_party}" %></h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for :lawsuit, url: update_lawsuit_path(@lawsuit) do |f| %>
+          <div class="form-group">
+            <%= f.label :case_number, 'Case Number *' %>
+            <%= f.text_field :case_number, class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :case_type, 'Case Type *' %>
+            <%= f.text_field :case_type, class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :opposite_party, 'Opposite Party *' %>
+            <%= f.text_field :opposite_party, class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :court_name, 'Court Name *' %>
+            <%= f.text_field :court_name, class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :location, 'Location *' %>
+            <%= f.text_field :location, class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :filing_date, 'Filing Date *' %>
+            <%= f.date_select :filing_date, class: 'form-control', start_year: 1900 %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :case_details, 'Case Details *' %>
+            <%= f.text_area :case_details, class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit 'Submit', class: 'btn btn-lg btn-primary' %>
+          </div>
+          <p><small>Fields marked with * are required.</small></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Instructions</h3>
+      </div>
+      <div class="panel-body">
+        <% if @lawsuit.errors.any? %>
+
+          <% @lawsuit.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger" role="alert"><%= msg %></div>
+          <% end %>
+
+        <% else %>
+          <div class="alert alert-success" role="alert"><strong>Case Number: </strong> Enter the lawsuit number allotted by court.</div>
+          <div class="alert alert-success" role="alert"><strong>Case Type: </strong> Specify the type of lawsuit.</div>
+          <div class="alert alert-success" role="alert"><strong>Opposite Party: </strong> Enter the name of opposite party to the lawsuit.</div>
+          <div class="alert alert-success" role="alert"><strong>Court Name: </strong> Enter the name of court.</div>
+          <div class="alert alert-success" role="alert"><strong>Location: </strong> Enter the location of lawsuit.</div>
+          <div class="alert alert-success" role="alert"><strong>Filing Date: </strong> Specify the date when lawsuit was filed.</div>
+          <div class="alert alert-success" role="alert"><strong>Case Details: </strong> Describe the details of the lawsuit.</div>
+        <% end %>
+        <hr />
+        <%= link_to 'Back', lawsuit_details_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
