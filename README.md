@@ -20,6 +20,8 @@ Features:
 
 
 ## © 2018 Aamir Sayid
+
+### Contact: 
 ### aamir.sayid@gmail.com
-#### +91 - 9811 44 2335
+#### Phone: +91 - 9811 44 2335
 #### www.theindianlaw.com

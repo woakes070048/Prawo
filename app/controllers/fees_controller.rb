@@ -4,6 +4,13 @@ class FeesController < ApplicationController
     @total_fees = Fee.sum(:amount)
   end
 
+  def manage
+    @client = Client.find(params[:client_id])
+    @fees = @client.fees.paginate(page: params[:page])
+
+    @total_fees = @client.fees.sum(:amount)
+  end
+
   def new
     @client = Client.find(params[:client_id])
     @fee = Fee.new
@@ -23,14 +30,7 @@ class FeesController < ApplicationController
     end
   end
 
-  def manage
-    @client = Client.find(params[:client_id])
-    @fees = @client.fees.paginate(page: params[:page], per_page: 10)
-
-    @total_fees = @client.fees.sum(:amount)
-  end
-
-
+  ### PRIVATE METHODS
   private
     def fee_params
       params.require(:fee).permit(:details, :amount)

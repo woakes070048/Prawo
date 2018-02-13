@@ -41,7 +41,13 @@
         <h3 class="panel-title">Information</h3>
       </div>
       <div class="panel-body">
-        <h3>Total: <%= number_to_currency @total_fees %></h3>
+        <h3>
+          <strong>
+          TOTAL FEES<br />
+          <hr />
+          <%= number_to_currency @total_fees %>
+          </strong>
+        </h3>
         <hr />
       </div>
     </div>
