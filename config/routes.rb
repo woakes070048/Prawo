@@ -6,13 +6,17 @@ Rails.application.routes.draw do
   ##
   ## FEES
   ##
+  get '/fees/index',               to: 'fees#index',   as: :fees_index
   get '/fees/manage/:client_id',   to: 'fees#manage',  as: :manage_fees
+
   get '/fees/new/:client_id',      to: 'fees#new',     as: :new_fees
   post '/fees/create/:client_id',  to: 'fees#create',  as: :create_fees
+
 
   ##
   ## LAWSUITS
   ##
+  get '/lawsuits/index',              to: 'lawsuits#index',   as: :lawsuits_index
   get '/lawsuits/manage/:client_id',  to: 'lawsuits#manage',  as: :manage_lawsuits
   get '/lawsuits/details/:id',        to: 'lawsuits#details', as: :lawsuit_details
 

@@ -1,4 +1,9 @@
 class FeesController < ApplicationController
+  def index
+    @fees = Fee.paginate(page: params[:page])
+    @total_fees = Fee.sum(:amount)
+  end
+
   def new
     @client = Client.find(params[:client_id])
     @fee = Fee.new
@@ -22,7 +27,7 @@ class FeesController < ApplicationController
     @client = Client.find(params[:client_id])
     @fees = @client.fees.paginate(page: params[:page], per_page: 10)
 
-    @total_fees = Fee.sum(:amount)
+    @total_fees = @client.fees.sum(:amount)
   end
 
 

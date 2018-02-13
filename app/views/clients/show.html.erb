@@ -4,7 +4,7 @@
     <h1>
       Client:
       <strong><%= @client.name %></strong>
-      <%= link_to 'Back', clients_path, class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Manage All Clients', clients_path, class: 'btn btn-primary btn-lg' %>
     </h1>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -78,16 +78,15 @@
       <div class="panel-body">
         <%= link_to 'Edit', edit_client_path(@client), class: 'btn btn-lg btn-info' %>
         <%= link_to 'Delete', client_path(@client), method: :delete, data: { confirm: 'Do you want to delete this client and all its associated data?' }, class: 'btn btn-lg btn-danger' %>
-
         <hr />
 
-        <%= link_to 'New Lawsuit', new_lawsuit_path(@client), class: 'btn btn-lg btn-success' %>
         <%= link_to 'Manage Lawsuits', manage_lawsuits_path(@client), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'New Lawsuit', new_lawsuit_path(@client), class: 'btn btn-lg btn-success' %>
 
         <hr />
 
-        <%= link_to 'New Fees', new_fees_path(@client), class: 'btn btn-lg btn-success' %>
         <%= link_to 'Manage Fees', manage_fees_path(@client), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'New Fees', new_fees_path(@client), class: 'btn btn-lg btn-success' %>
       </div>
     </div>
     <div class="panel panel-default">
@@ -95,7 +94,8 @@
         <h3 class="panel-title">Information</h3>
       </div>
       <div class="panel-body">
-        Information
+        <h3>Total Lawsuits: <strong><%= @client.lawsuits.count %></strong> <br /></h3>
+        <h3>Total Fees: <strong><%= number_to_currency @client.fees.sum(:amount) %></strong> <br /></h3>
       </div>
     </div>
   </div>

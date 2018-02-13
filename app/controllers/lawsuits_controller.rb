@@ -1,4 +1,8 @@
 class LawsuitsController < ApplicationController
+  def index
+    @lawsuits = Lawsuit.paginate(page: params[:page])
+  end
+
   def manage
     @client = Client.find(params[:client_id])
 
