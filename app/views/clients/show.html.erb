@@ -95,6 +95,7 @@
       </div>
       <div class="panel-body">
         <h3>Total Lawsuits: <strong><%= @client.lawsuits.count %></strong> <br /></h3>
+        <hr />
         <h3>Total Fees: <strong><%= number_to_currency @client.fees.sum(:amount) %></strong> <br /></h3>
       </div>
     </div>
