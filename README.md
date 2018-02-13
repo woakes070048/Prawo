@@ -13,13 +13,11 @@ Features:
 * Lightweight: No need to install on local computer.
 * Advanced Reporting
 
-### License: GNU General Public License v3. 
 
-## Data Structure in Prawo
-Prawo simplifies data management for law firms. 
-Apart from the user management capabilities, Prawo manages following data:
-![Prawo ERD](https://cdn.theindianlaw.com/prawo/PrawoERD.jpg)
+### License: Free for evaluation / non-commercial usage. Contact [developer](mailto:aamir.sayid@gmail.com) for commercial licensing and support. 
+
 
 ## © 2018 Aamir Sayid
 ### aamir.sayid@gmail.com
-#### www.theindianlaw.com
+#### +91 - 9811 44 2335
+#### <www.theindianlaw.com>
