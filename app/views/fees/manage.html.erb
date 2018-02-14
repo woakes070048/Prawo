@@ -4,7 +4,6 @@
     <h1>
       Manage Fees:
       <strong><%= @client.name %></strong>
-      <%= link_to 'Client Details', client_path(@client), class: 'btn btn-lg btn-primary' %>
     </h1>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -47,6 +46,8 @@
         <h3>Total: <%= number_to_currency @total_fees %></h3>
         <hr />
         <%= link_to 'Add New Fees', new_fees_path(@client), class: 'btn btn-lg btn-primary' %>
+        <br /> <hr />
+        <%= link_to 'Client Details', client_path(@client), class: 'btn btn-lg btn-primary' %>
       </div>
     </div>
   </div>

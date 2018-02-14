@@ -2,8 +2,8 @@
 <div class="row">
   <div class="col-md-8">
     <h1>
+      <strong><%= @lawsuit.case_number %>:</strong>
       <%= "#{@lawsuit.client.name} vs #{@lawsuit.opposite_party}" %>
-      <%= link_to 'Back', manage_lawsuits_path(@lawsuit.client), class: 'btn btn-primary btn-lg' %>
     </h1>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -60,13 +60,18 @@
 
         <hr />
 
-        <%= link_to 'New Fees', new_fees_path(@lawsuit.client), class: 'btn btn-lg btn-success' %>
-        <%= link_to 'Manage Fees', manage_fees_path(@lawsuit.client), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'Manage Updates', manage_updates_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'New Update', new_update_path(@lawsuit), class: 'btn btn-lg btn-success' %>
 
         <hr />
 
-        <%= link_to 'New Update', new_update_path(@lawsuit), class: 'btn btn-lg btn-success' %>
-        <%= link_to 'Manage Updates', manage_updates_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'Manage Fees', manage_fees_path(@lawsuit.client), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'New Fees', new_fees_path(@lawsuit.client), class: 'btn btn-lg btn-success' %>
+
+        <hr />
+
+        <%= link_to 'Manage Lawsuits', manage_lawsuits_path(@lawsuit.client), class: 'btn btn-primary btn-lg' %>
+        <%= link_to 'New Lawsuits', new_lawsuit_path(@lawsuit.client), class: 'btn btn-success btn-lg' %>
       </div>
     </div>
     <div class="panel panel-default">
