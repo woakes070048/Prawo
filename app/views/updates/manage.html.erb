@@ -1,0 +1,48 @@
+<% provide(:title, "Manage Updates") %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      Manage Updates for Lawsuit:
+      <strong><%= "#{@lawsuit.case_number}" %></strong>
+      <%= link_to 'Create New Update', new_update_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Back', lawsuit_details_path(@lawsuit), class: 'btn btn-lg btn-info' %>
+    </h1>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center"><strong><%= "#{@lawsuit.client.name} vs #{@lawsuit.opposite_party}" %></strong></h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+          <tr>
+            <th>Update ID</th>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Details</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @updates.each do |update| %>
+            <tr>
+              <td><%= update.id %></td>
+              <td><%= time_tag update.created_at %></td>
+              <td><strong><%= link_to update.title ,update_details_path(update) %></strong></td>
+              <td><%= truncate(update.details) %></td>
+              <td>
+                <%= link_to 'Details', update_details_path(update), class: 'btn btn-sm btn-primary' %>
+                <%= link_to 'Edit', edit_update_path(update), class: 'btn btn-sm btn-success' %>
+                <%= link_to 'Delete', remove_update_path(update), data: { confirm: 'Do you want to delete this update and all its associated data?' }, class: 'btn btn-sm btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <hr />
+        <div class="flickr_pagination">
+          <%= will_paginate @updates %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -28,4 +28,21 @@ Rails.application.routes.draw do
 
   get '/lawsuits/remove/:id',         to: 'lawsuits#remove',  as: :remove_lawsuit
 
+
+  ##
+  ## UPDATES
+  ##
+  get '/updates/index',               to: 'updates#index',    as: :updates_index
+  get '/updates/manage/:lawsuit_id',  to: 'updates#manage',   as: :manage_updates
+  get '/updates/details/:id',         to: 'updates#details',  as: :update_details
+
+  get '/updates/new/:lawsuit_id',     to: 'updates#new',      as: :new_update
+  post '/updates/create/:lawsuit_id', to: 'updates#create',   as: :create_update
+
+  get '/updates/edit/:id',            to: 'updates#edit',     as: :edit_update
+  post '/updates/update/:id',         to: 'updates#update',   as: :update_update
+
+  get '/updates/remove/:id',          to: 'updates#remove',   as: :remove_update
+
+
 end

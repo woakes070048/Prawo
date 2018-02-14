@@ -1,0 +1,42 @@
+<% provide(:title, "Manage Updates") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Manage Updates</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+          <tr>
+            <th>Update ID</th>
+            <th>Lawsuit</th>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @updates.each do |update| %>
+            <tr>
+              <td><%= update.id %></td>
+              <td><%= link_to update.lawsuit.case_number, lawsuit_details_path(update.lawsuit) %></td>
+              <td><%= time_tag update.created_at %></td>
+              <td><strong><%= link_to update.title ,update_details_path(update) %></strong></td>
+              <td>
+                <%= link_to 'Details', update_details_path(update), class: 'btn btn-sm btn-primary' %>
+                <%= link_to 'Edit', edit_update_path(update), class: 'btn btn-sm btn-success' %>
+                <%= link_to 'Delete', remove_update_path(update), data: { confirm: 'Do you want to delete this update and all its associated data?' }, class: 'btn btn-sm btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <hr />
+        <div class="flickr_pagination">
+          <%= will_paginate @updates %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

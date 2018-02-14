@@ -8,4 +8,6 @@ class Lawsuit < ApplicationRecord
   validates :case_details, presence: true
 
   belongs_to :client
+
+  has_many :updates, dependent: :destroy
 end
