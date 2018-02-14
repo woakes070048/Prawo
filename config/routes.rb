@@ -45,4 +45,15 @@ Rails.application.routes.draw do
   get '/updates/remove/:id',          to: 'updates#remove',   as: :remove_update
 
 
+  ##
+  ## DOCUMENTS
+  ##
+  get '/documents/index',               to: 'documents#index',    as: :documents_index
+  get '/documents/manage/:lawsuit_id',  to: 'documents#manage',   as: :manage_documents
+  get '/documents/details/:id',         to: 'documents#details',  as: :document_details
+
+  get '/documents/new/:lawsuit_id',     to: 'documents#new',      as: :new_document
+  post '/documents/create/:lawsuit_id', to: 'documents#create',   as: :create_document
+
+  get '/documents/remove/:id',          to: 'documents#remove',   as: :remove_document
 end
