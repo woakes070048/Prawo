@@ -14,14 +14,13 @@ Features:
 * Advanced Reporting
 * Extensible: Add new features easily.
 * Customizable: Modular design for easy customizations of features.
+* Logging: Fine grained logging for better security and monitoring.
 
-
-### License: Free for evaluation / non-commercial usage. Contact [developer](mailto:aamir.sayid@gmail.com) for commercial licensing and support. 
-
+### License: GNU General Public License v3. 
 
 ## © 2018 Aamir Sayid
 
-### Contact: 
-### aamir.sayid@gmail.com
+## Installation, Technical Support, Maintenance, and Customization Service Available. Contact: 
+#### aamir.sayid@gmail.com
 #### Phone: +91 - 9811 44 2335
 #### www.theindianlaw.com

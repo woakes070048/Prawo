@@ -10,4 +10,5 @@ class Lawsuit < ApplicationRecord
   belongs_to :client
 
   has_many :updates, dependent: :destroy
+  has_many :documents, dependent: :destroy
 end

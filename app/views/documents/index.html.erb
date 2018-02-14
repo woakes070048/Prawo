@@ -1,0 +1,43 @@
+<% provide(:title, "Manage Documents") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Manage Documents</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+          <tr>
+            <th>Document ID</th>
+            <th>Lawsuit</th>
+            <th>Name</th>
+            <th>External Link</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @documents.each do |document| %>
+            <tr>
+              <td><%= document.id %></td>
+              <td><%= document.lawsuit.case_number %></td>
+              <td><%= link_to document.name, document_details_path(document) %></td>
+              <td><% if document.url.blank? %>No Link<% else %><%= link_to 'Open Link', document.url, target: '_blank' %><% end %></td>
+              <td><%= time_tag document.created_at %></td>
+              <td>
+                <%= link_to 'View', document_details_path(document), class: 'btn btn-sm btn-primary' %>
+                <%= link_to 'Delete', remove_document_path(document), data: { confirm: 'Do you wish to delete this document?' }, class: 'btn btn-sm btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <hr />
+        <div class="flickr_pagination">
+          <%= will_paginate @documents %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
