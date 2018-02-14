@@ -20,7 +20,7 @@ Features:
 
 ## © 2018 Aamir Sayid
 
-## Installation, Technical Support, Maintenance, and Customization Service Available. Contact: 
+## Installation, technical support, maintenance, and customization service available. Contact: 
 #### aamir.sayid@gmail.com
 #### Phone: +91 - 9811 44 2335
-#### www.theindianlaw.com
+#### www.aamirsayid.com
