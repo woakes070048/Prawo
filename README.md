@@ -16,7 +16,7 @@ Features:
 * Customizable: Modular design for easy customizations of features.
 * Logging: Fine grained logging for better security and monitoring.
 
-### License: GNU General Public License v3. [Click here to read license terms](../blob/master/license.md) ([alternate link](https://www.gnu.org/licenses/gpl-3.0.en.html)).
+### License: GNU General Public License v3. [Click here to read license terms](license.md) ([alternate link](https://www.gnu.org/licenses/gpl-3.0.en.html)).
 Copyright (C) 2018  Aamir Sayid (aamir.sayid@gmail.com)
 
     This program is free software: you can redistribute it and/or modify
