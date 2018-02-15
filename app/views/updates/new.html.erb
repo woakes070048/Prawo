@@ -42,7 +42,8 @@
           <div class="alert alert-success" role="alert"><strong>Details: </strong> Specify the details of the update.</div>
         <% end %>
         <hr />
-        <%= link_to 'Back', manage_updates_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'Manage Updates', manage_updates_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'Lawsuit Details', lawsuit_details_path(@lawsuit), class: 'btn btn-lg btn-primary' %>
       </div>
     </div>
   </div>

@@ -26,8 +26,7 @@
               <td><% if document.url.blank? %>No Link<% else %><%= link_to 'Open Link', document.url, target: '_blank' %><% end %></td>
               <td><%= time_tag document.created_at %></td>
               <td>
-                <%= link_to 'View', document_details_path(document), class: 'btn btn-sm btn-primary' %>
-                <%= link_to 'Delete', remove_document_path(document), data: { confirm: 'Do you wish to delete this document?' }, class: 'btn btn-sm btn-danger' %>
+                <%= link_to 'Details', document_details_path(document), class: 'btn btn-sm btn-primary' %>
               </td>
             </tr>
           <% end %>

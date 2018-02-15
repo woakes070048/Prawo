@@ -72,7 +72,8 @@
           <div class="alert alert-success" role="alert"><strong>Case Details: </strong> Describe the details of the lawsuit.</div>
         <% end %>
         <hr />
-        <%= link_to 'Back', manage_lawsuits_path(@client), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'Manage Lawsuits', manage_lawsuits_path(@client), class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'Client Details', client_path(@client), class: 'btn btn-lg btn-primary' %>
       </div>
     </div>
   </div>

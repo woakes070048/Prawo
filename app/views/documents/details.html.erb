@@ -40,11 +40,7 @@
       </div>
       <div class="panel-body">
         <%= link_to 'Delete', remove_document_path(@document), data: { confirm: 'Do you want to delete this document and all its associated data?' }, class: 'btn btn-lg btn-danger' %>
-
-        <hr />
-
         <%= link_to 'All Documents', manage_documents_path(@document.lawsuit), class: 'btn btn-primary btn-lg' %>
-        <%= link_to 'New Documents', new_document_path(@document.lawsuit), class: 'btn btn-success btn-lg' %>
 
         <hr />
 
