@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214194449) do
+ActiveRecord::Schema.define(version: 20180220191409) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -67,6 +67,36 @@ ActiveRecord::Schema.define(version: 20180214194449) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lawsuit_id"], name: "index_updates_on_lawsuit_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "father_name"
+    t.string "job_title"
+    t.date "date_of_birth"
+    t.string "phone"
+    t.string "address"
+    t.string "city"
+    t.string "pin_zip"
+    t.string "state"
+    t.string "country"
+    t.text "notes"
+    t.boolean "enabled", default: false
+    t.boolean "admin", default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

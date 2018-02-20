@@ -26,3 +26,6 @@
 # IDE Related Files
 /.idea
 /.idea/*
+
+# Environment Variables
+.env
