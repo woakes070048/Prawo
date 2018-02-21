@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
           end
         else
           flash[:alert] = 'You need to sign in to access this page.'
-          redirect_to root_url
+          redirect_to new_user_session_path
         end
       end
 
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
           end
         else
           flash[:alert] = 'You need to sign in to access this page.'
-          redirect_to root_url
+          redirect_to new_user_session_path
         end
       end
 end

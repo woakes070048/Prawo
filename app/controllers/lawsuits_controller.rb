@@ -1,4 +1,7 @@
 class LawsuitsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_enabled
+
   def index
     @lawsuits = Lawsuit.paginate(page: params[:page])
   end

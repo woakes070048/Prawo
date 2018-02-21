@@ -1,4 +1,7 @@
 class UpdatesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_enabled
+
   def index
     @updates = Update.paginate(page: params[:page])
   end

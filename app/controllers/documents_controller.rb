@@ -1,4 +1,7 @@
 class DocumentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_enabled
+
   def index
     @documents = Document.paginate(page: params[:page])
   end

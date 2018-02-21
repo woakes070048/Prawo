@@ -1,4 +1,7 @@
 class FeesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_enabled
+
   def index
     @fees = Fee.paginate(page: params[:page])
     @total_fees = Fee.sum(:amount)

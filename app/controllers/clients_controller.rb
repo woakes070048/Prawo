@@ -1,4 +1,7 @@
 class ClientsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_enabled
+
   def index
     @clients = Client.paginate(page: params[:page])
   end
