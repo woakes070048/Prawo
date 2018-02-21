@@ -28,6 +28,11 @@ class DocumentsController < ApplicationController
 
     if @document.save
       flash[:notice] = "Document saved successfully."
+
+      @activity_log = Log.new(detail: "Document: #{@document.name} added to Lawsuit: #{@lawsuit.case_number}")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to document_details_path(@document)
     else
       render 'new'
@@ -40,6 +45,11 @@ class DocumentsController < ApplicationController
 
     @document.destroy
     flash[:notice] = "Document deleted succesfully."
+
+    @activity_log = Log.new(detail: "Document: #{@document.name} removed from Lawsuit: #{@lawsuit.case_number}")
+    @activity_log.user = current_user
+    @activity_log.save
+
     redirect_to manage_documents_path(@lawsuit)
   end
 

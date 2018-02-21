@@ -34,6 +34,11 @@ class LawsuitsController < ApplicationController
 
     if @lawsuit.save
       flash[:notice] = "Lawsuit created successfully!"
+
+      @activity_log = Log.new(detail: "Lawsuit: #{@lawsuit.case_number} created for Client: #{@client.name}")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to lawsuit_details_path(@lawsuit)
     else
       render 'new'
@@ -46,6 +51,11 @@ class LawsuitsController < ApplicationController
 
     if @lawsuit.update(lawsuit_params)
       flash[:notice] = "Lawsuit updated successfully!"
+
+      @activity_log = Log.new(detail: "Lawsuit: #{@lawsuit.case_number} updated for Client: #{@client.name}")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to lawsuit_details_path(@lawsuit)
     else
       render 'edit'
@@ -58,6 +68,11 @@ class LawsuitsController < ApplicationController
 
     @lawsuit.destroy
     flash[:notice] = "Lawsuit deleted successfully!"
+
+    @activity_log = Log.new(detail: "Lawsuit: #{@lawsuit.case_number} deleted from Client: #{@client.name}")
+    @activity_log.user = current_user
+    @activity_log.save
+
     redirect_to manage_lawsuits_path(@client)
   end
 

@@ -34,6 +34,11 @@ class UpdatesController < ApplicationController
 
     if @update.save
       flash[:notice] = "Update saved successfully."
+
+      @activity_log = Log.new(detail: "Update: #{@update.title} added for Lawsuit: #{@lawsuit.case_number}")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to update_details_path(@update)
     else
       render 'new'
@@ -46,6 +51,11 @@ class UpdatesController < ApplicationController
 
     if @update.update(update_params)
       flash[:notice] = "Update updated successfully."
+
+      @activity_log = Log.new(detail: "Update: #{@update.title} updated for Lawsuit: #{@lawsuit.case_number}")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to update_details_path(@update)
     else
       render 'edit'
@@ -58,6 +68,11 @@ class UpdatesController < ApplicationController
 
     @update.destroy
     flash[:notice] = "Update deleted successfully."
+
+    @activity_log = Log.new(detail: "Update: #{@update.title} removed from Lawsuit: #{@lawsuit.case_number}")
+    @activity_log.user = current_user
+    @activity_log.save
+
     redirect_to manage_updates_path(@lawsuit)
   end
 

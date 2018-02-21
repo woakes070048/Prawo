@@ -27,6 +27,11 @@ class FeesController < ApplicationController
 
     if @fee.save
       flash[:notice] = "Fee added successfully."
+
+      @activity_log = Log.new(detail: "Fee: #{@fee.amount} added to Client: #{@client.name}")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to manage_fees_path(@client)
     else
       render 'new'

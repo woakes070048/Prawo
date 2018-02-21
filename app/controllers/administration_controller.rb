@@ -34,6 +34,11 @@ class AdministrationController < ApplicationController
     # Attempt to save the user now.
     if @user.save
       flash[:notice] = "New user created successfully. The password is #{temporary_password}"
+
+      @activity_log = Log.new(detail: "New user: #{@user.id}-#{@user.name} created.")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to admin_users_details_path(@user)
     else
       render 'new'
@@ -45,6 +50,11 @@ class AdministrationController < ApplicationController
 
     if @user.update(user_params)
       flash[:notice] = "User details updated successfully."
+
+      @activity_log = Log.new(detail: "User: #{@user.id}-#{@user.name} updated.")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to admin_users_details_path(@user)
     else
       render 'edit'
@@ -57,6 +67,10 @@ class AdministrationController < ApplicationController
     @user.enabled = false
     @user.save
 
+    @activity_log = Log.new(detail: "User: #{@user.id}-#{@user.name} disabled.")
+    @activity_log.user = current_user
+    @activity_log.save
+
     flash[:notice] = "User has been disabled."
     redirect_to admin_users_details_path(@user)
   end
@@ -67,6 +81,10 @@ class AdministrationController < ApplicationController
     @user.enabled = true
     @user.save
 
+    @activity_log = Log.new(detail: "User: #{@user.id}-#{@user.name} activated.")
+    @activity_log.user = current_user
+    @activity_log.save
+
     flash[:notice] = "User has been activated."
     redirect_to admin_users_details_path(@user)
   end
@@ -75,6 +93,10 @@ class AdministrationController < ApplicationController
     @user = User.find(params[:id])
 
     @user.destroy
+
+    @activity_log = Log.new(detail: "User: #{@user.id}-#{@user.name} removed.")
+    @activity_log.user = current_user
+    @activity_log.save
 
     flash[:notice] = "User has been deleted successfully."
     redirect_to admin_users_index_path

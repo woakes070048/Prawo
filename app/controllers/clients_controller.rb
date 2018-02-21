@@ -23,6 +23,11 @@ class ClientsController < ApplicationController
 
     if @client.save
       flash[:notice] = "Client #{@client.name} created successfully."
+
+      @activity_log = Log.new(detail: "New client: #{@client.id}-#{@client.name} created.")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to @client
     else
       render 'new'
@@ -34,6 +39,11 @@ class ClientsController < ApplicationController
 
     if @client.update(client_params)
       flash[:notice] = "Client #{@client.name} updated successfully."
+
+      @activity_log = Log.new(detail: "Client: #{@client.id}-#{@client.name} updated.")
+      @activity_log.user = current_user
+      @activity_log.save
+
       redirect_to @client
     else
       render 'edit'
@@ -45,6 +55,11 @@ class ClientsController < ApplicationController
     @client.destroy
 
     flash[:notice] = "Client #{@client.name} deleted successfully."
+
+    @activity_log = Log.new(detail: "Client: #{@client.id}-#{@client.name} deleted.")
+    @activity_log.user = current_user
+    @activity_log.save
+
     redirect_to clients_path
   end
 
