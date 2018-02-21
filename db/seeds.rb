@@ -122,8 +122,8 @@ document.save
 document = Document.new(name: 'Affidavit', url: 'https://www.dropbox.com', lawsuit_id: 2)
 document.save
 
-admin_user = User.new(email: 'admin@example.com', password: 'foobar', password_confirmation: 'foobar', name: 'Admin User', father_name: 'Admin User Father', job_title: 'Owner', date_of_birth: '01/01/1955', phone: '987654321', address: 'Sunset Boulevard', city: 'Los Angeles', pin_zip: '94568', state: 'CA', country: 'USA', admin: true, enabled: true, notes: 'Quis autem vel eum iure reprehenderit. Quis autem vel eum iure reprehenderit.')
+admin_user = User.new(email: 'admin@example.com', password: 'foobar', password_confirmation: 'foobar', name: 'Admin User', father_name: 'Admin User Father', job_title: 'Owner', date_of_birth: '01/01/1955', phone: '987654321', address: 'Sunset Boulevard', city: 'Los Angeles', pin_zip: '94568', state: 'CA', country: 'US', admin: true, enabled: true, notes: 'Quis autem vel eum iure reprehenderit. Quis autem vel eum iure reprehenderit.')
 admin_user.save
 
-normal_user = User.new(email: 'normal_user@example.com', password: 'foobar', password_confirmation: 'foobar', name: 'Normal User', father_name: 'Normal User Father', job_title: 'Senior Associate', date_of_birth: '01/01/1975', phone: '123456789', address: 'La Brea Avenue', city: 'Los Angeles', pin_zip: '94568', state: 'CA', country: 'USA', admin: false, enabled: true, notes: 'Quis autem vel eum iure reprehenderit. Quis autem vel eum iure reprehenderit.')
+normal_user = User.new(email: 'normal_user@example.com', password: 'foobar', password_confirmation: 'foobar', name: 'Normal User', father_name: 'Normal User Father', job_title: 'Senior Associate', date_of_birth: '01/01/1975', phone: '123456789', address: 'La Brea Avenue', city: 'Los Angeles', pin_zip: '94568', state: 'CA', country: 'US', admin: false, enabled: true, notes: 'Quis autem vel eum iure reprehenderit. Quis autem vel eum iure reprehenderit.')
 normal_user.save

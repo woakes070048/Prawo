@@ -1,7 +1,7 @@
 <% provide(:title, "Manage Users") %>
 <div class="row">
   <div class="col-md-12">
-    <h1>Manage Users: <%= link_to 'Add New User', '#', class: 'btn btn-lg btn-primary' %></h1>
+    <h1>Manage Users: <%= link_to 'Add New User', admin_users_new_path, class: 'btn btn-lg btn-primary' %></h1>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"></h3>
@@ -12,10 +12,10 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Father / Director</th>
+            <th>Father's Name</th>
+            <th>Job Title</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>City</th>
             <th>Actions</th>
           </tr>
           </thead>
@@ -23,14 +23,14 @@
           <% @users.each do |user| %>
             <tr>
               <td><%= user.id %></td>
-              <td><%= link_to user.name, '#' %></td>
+              <td><%= link_to user.name, admin_users_details_path(user) %></td>
               <td><%= user.father_name %></td>
               <td><%= user.job_title %></td>
               <td><%= user.phone %></td>
               <td><%= user.email %></td>
               <td>
-                <%= link_to 'Details', '#', class: 'btn btn-sm btn-success' %>
-                <%= link_to 'Logs', '#', class: 'btn btn-sm btn-primary' %>
+                <%= link_to 'Details', admin_users_details_path(user), class: 'btn btn-sm btn-success' %>
+                <%= link_to 'Logs', admin_users_logs_path(user), class: 'btn btn-sm btn-primary' %>
               </td>
             </tr>
           <% end %>

@@ -62,5 +62,20 @@ Rails.application.routes.draw do
   ##
   ## ADMINISTRATION
   ##
-  get '/administration/users/index',    to: 'administration#users_index',  as: :admin_users_index
+  get '/administration/users/index',        to: 'administration#users_index',     as: :admin_users_index
+  get '/administration/users/details/:id',  to: 'administration#users_details',   as: :admin_users_details
+
+  get '/administration/users/new',          to: 'administration#users_new',       as: :admin_users_new
+  post '/administration/users/create',      to: 'administration#users_create',    as: :admin_users_create
+
+  get '/administration/users/edit/:id',     to: 'administration#users_edit',      as: :admin_users_edit
+  post '/administration/users/update/:id',  to: 'administration#users_update',    as: :admin_users_update
+
+  get '/administration/users/disable/:id',  to: 'administration#users_disable',   as: :admin_users_disable
+  get '/administration/users/enable/:id',   to: 'administration#users_enable',    as: :admin_users_enable
+  get '/administration/users/remove/:id',   to: 'administration#users_remove',    as: :admin_users_remove
+
+  get '/administration/users/logs/:id',     to: 'administration#users_logs',      as: :admin_users_logs
+
+  get '/administration/logs',               to: 'administration#logs',            as: :admin_logs
 end

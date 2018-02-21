@@ -6,4 +6,8 @@ class AdministrationController < ApplicationController
   def users_index
     @users = User.paginate(page: params[:page])
   end
+
+  def users_details
+    @user = User.find(params[:id])
+  end
 end
