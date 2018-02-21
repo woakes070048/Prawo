@@ -14,21 +14,33 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<%= root_url %>">Home</a></li>
+
         <% if user_signed_in? %>
+
           <li><%= link_to 'Clients', clients_path %></li>
           <li><%= link_to 'Lawsuits', lawsuits_index_path %></li>
           <li><%= link_to 'Fees', fees_index_path %></li>
           <li><%= link_to 'Documents', documents_index_path %></li>
           <li><%= link_to 'Updates', updates_index_path %></li>
+
+          <% if current_user.admin? %>
+            <li><%= link_to 'Manage Users', admin_users_index_path %></li>
+          <% end %>
+
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Help', help_path %></li>
+
         <% if user_signed_in? %>
+
           <li><a><%= current_user.name %></a></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+
         <% else %>
+
           <li><%= link_to 'Login', new_user_session_path %></li>
+
         <% end %>
       </ul>
     </div>

@@ -1,0 +1,46 @@
+<% provide(:title, "Manage Users") %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Manage Users: <%= link_to 'Add New User', '#', class: 'btn btn-lg btn-primary' %></h1>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"></h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Father / Director</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= link_to user.name, '#' %></td>
+              <td><%= user.father_name %></td>
+              <td><%= user.job_title %></td>
+              <td><%= user.phone %></td>
+              <td><%= user.email %></td>
+              <td>
+                <%= link_to 'Details', '#', class: 'btn btn-sm btn-success' %>
+                <%= link_to 'Logs', '#', class: 'btn btn-sm btn-primary' %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <hr />
+        <div class="flickr_pagination">
+          <%= will_paginate @users %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -58,4 +58,9 @@ Rails.application.routes.draw do
   post '/documents/create/:lawsuit_id', to: 'documents#create',   as: :create_document
 
   get '/documents/remove/:id',          to: 'documents#remove',   as: :remove_document
+
+  ##
+  ## ADMINISTRATION
+  ##
+  get '/administration/users/index',    to: 'administration#users_index',  as: :admin_users_index
 end
