@@ -20,4 +20,6 @@ class User < ApplicationRecord
   def country_name
     ISO3166::Country[country].name
   end
+
+  has_many :logs, dependent: :destroy
 end

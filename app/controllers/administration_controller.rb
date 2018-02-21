@@ -80,6 +80,16 @@ class AdministrationController < ApplicationController
     redirect_to admin_users_index_path
   end
 
+  def users_logs
+    @user = User.find(params[:id])
+
+    @logs = @user.logs.paginate(page: params[:page])
+  end
+
+  def logs
+    @logs = Log.paginate(page: params[:page])
+  end
+
   private
     def user_params
       params.require(:user).permit(:email, :name, :father_name, :job_title, :date_of_birth, :phone, :address, :city, :pin_zip, :state, :country, :notes)

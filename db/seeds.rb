@@ -127,3 +127,45 @@ admin_user.save
 
 normal_user = User.new(email: 'normal_user@example.com', password: 'foobar', password_confirmation: 'foobar', name: 'Normal User', father_name: 'Normal User Father', job_title: 'Senior Associate', date_of_birth: '01/01/1975', phone: '123456789', address: 'La Brea Avenue', city: 'Los Angeles', pin_zip: '94568', state: 'CA', country: 'US', admin: false, enabled: true, notes: 'Quis autem vel eum iure reprehenderit. Quis autem vel eum iure reprehenderit.')
 normal_user.save
+
+sample_log = Log.new(user_id: 1, detail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem')
+sample_log.save
+
+sample_log = Log.new(user_id: 1, detail: 'Accusantium doloremque laudantium, totam rem aperiam, eaque')
+sample_log.save
+
+sample_log = Log.new(user_id: 1, detail: 'Ipsa quae ab illo inventore veritatis et quasi architecto beatae')
+sample_log.save
+
+sample_log = Log.new(user_id: 1, detail: 'Voluptatem quia voluptas sit aspernatur aut odit aut fugit')
+sample_log.save
+
+sample_log = Log.new(user_id: 1, detail: 'Ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Quis autem vel eum iure reprehenderit qui in ea')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Nemo enim ipsam voluptatem quia voluptas sit')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Ut enim ad minima veniam, quis nostrum exercitationem')
+sample_log.save
+
+sample_log = Log.new(user_id: 1, detail: 'Ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Quis autem vel eum iure reprehenderit qui in ea')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Nemo enim ipsam voluptatem quia voluptas sit')
+sample_log.save
+
+sample_log = Log.new(user_id: 2, detail: 'Ut enim ad minima veniam, quis nostrum exercitationem')
+sample_log.save
