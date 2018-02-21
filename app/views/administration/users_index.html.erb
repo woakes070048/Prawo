@@ -31,6 +31,7 @@
               <td>
                 <%= link_to 'Details', admin_users_details_path(user), class: 'btn btn-sm btn-success' %>
                 <%= link_to 'Logs', admin_users_logs_path(user), class: 'btn btn-sm btn-primary' %>
+                <% if !user.enabled? %><span class="label label-danger">Disabled</span><% end %>
               </td>
             </tr>
           <% end %>
